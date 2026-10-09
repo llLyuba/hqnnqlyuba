@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Pseudo haptics – dry vs wet</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #161616;
+      font-family: sans-serif;
+      /* Hide the real cursor, we draw our own */
+      cursor: none;
+      /* Important on iPad: stops scrolling/zooming so pointer events work */
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+
+
+    /* Line in the middle of the screen */
+    #divider {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #333;
+    }
+
+    /* One group of circles per finger (created in script.js) */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: #e6e6e6;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="divider"></div>
+  <script src="script.js"></script>
+</body>
+</html>

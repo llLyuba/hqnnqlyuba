@@ -1,0 +1,241 @@
+:root {
+  --padding: 0.3em;
+  --padding-box: 1em;
+  --fg: var(--sl-color-white);
+  --bg: var(--sl-color-black);
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Dark mode colors. */
+:root {
+	--sl-color-accent-low: #0a0a42;
+	--sl-color-accent: #0003be;
+	--sl-color-accent-high: #b7b1f8;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #ebeaf6;
+	--sl-color-gray-2: #c0bdcc;
+	--sl-color-gray-3: #86839e;
+	--sl-color-gray-4: #535069;
+	--sl-color-gray-5: #333047;
+	--sl-color-gray-6: #211f35;
+	--sl-color-black: #17151f;
+}
+/* Light mode colors. */
+@media (prefers-color-scheme: light) {
+  :root {
+    --sl-color-accent-low: #fcc5d9;
+    --sl-color-accent: #c10072;
+    --sl-color-accent-high: #5f0036;
+    --sl-color-white: #1f1519;
+    --sl-color-gray-1: #351f28;
+    --sl-color-gray-2: #473039;
+    --sl-color-gray-3: #695059;
+    --sl-color-gray-4: #9e838d;
+    --sl-color-gray-5: #ccbdc3;
+    --sl-color-gray-6: #f6eaee;
+    --sl-color-gray-7: #fbf4f6;
+    --sl-color-black: #ffffff;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+
+}
+
+body {
+  /* overscroll-behavior: contain; */
+  font-family: var(--font);
+  background-color: var(--bg);
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  color: var(--fg);
+}
+
+.fullHeight {
+  height: 100vh;
+}
+
+.demos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.demos>div {
+  border: var(--padding) solid var(--sl-color-gray-6);
+  padding: var(--padding-box);
+  margin: var(--padding);
+  border-radius: 6px;
+  max-width: 30em;
+}
+
+.demos .mods::before {
+  content: "Modules ";
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+.demos .fns::before {
+  content: "Functions ";
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-family: var(--font);
+}
+
+.demos .fns {
+  font-family: monospace;
+}
+
+.demos .techniques {
+  font-size: 0.8em;
+  margin-top: 0.1em;
+  margin-bottom: 0.3em;
+}
+
+.demos .techniques::before {
+  content: "Techniques ";
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+.pill {
+  background-color: var(--sl-color-gray-1);
+  color: var(--sl-color-black);
+}
+
+.pill:hover {
+  color: var(--bg);
+}
+.pill:visited {
+  opacity: 0.8;
+  color:var(--sl-color-black);
+}
+.demos .source,
+.demos .readme,
+.pill {
+  text-transform: uppercase;
+  font-size: 0.5em;
+  padding: 0.5em;
+  margin-top: -0.1em;
+  display: inline-block;
+  opacity: 0.6;
+  border-radius: 1em;
+  transition: opacity 0.2s ease-in;
+}
+
+.demos .readme,
+.demos .source {
+  border: 1px solid var(--sl-color-gray-2);
+  color: var(--sl-color-gray-2);
+
+}
+
+.demos .readme::before {
+  content: "Readme";
+}
+
+.demos .source::before {
+  content: "Source";
+}
+
+.demos .readme:hover,
+.demos .source:hover,
+.pill:hover {
+  opacity: 1;
+
+}
+
+.demos ul.nobullets li {
+  padding-bottom: var(--padding);
+
+}
+
+.pillbox {
+  display: flex;
+  margin-bottom: 1em;
+  flex-wrap: wrap;
+  gap: var(--padding);
+  list-style: none;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header {
+  font-size: 1.8em;
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+header a:link,
+header a:visited {
+  text-decoration: none;
+  color: var(--fg);
+}
+
+header a:hover {
+  color: var(--sl-color-accent);
+}
+
+ul.nobullets {
+  padding: 0;
+  padding-top: calc(var(--padding)*2);
+
+}
+
+ul.nobullets li {
+  list-style: none;
+}
+
+section {
+  padding: 1em;
+}
+
+
+main>section {
+  max-width: 20em;
+}
+
+section>div {
+  padding-bottom: 2em;
+}
+
+h1 {
+  color: var(--fg);
+  font-size: 2.4em;
+  font-weight: 300;
+  margin-top: 0.1em;
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.8em;
+  font-weight: 300;
+}
+
+a {
+  color: var(--sl-color-accent-high);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--sl-color-accent);
+  opacity:0.8;
+}
